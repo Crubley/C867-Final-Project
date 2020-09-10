@@ -1,21 +1,47 @@
 #pragma once
 #include <iostream>
+#include "degree.h"
 using namespace std;
-
-enum DegreeProgram(SECURITY, NETWORK, SOFTWARE);	// Enumerated data type for various program degrees
 
 
 class Student {			// Create the Student class
-	public:					// Student class' public functions
-		void SetStudentID(int studentID);			// studentID mutator
-		void SetFirstName(string firstName);		// firstName mutator
-		void SetLastName(string lastName);			// lastName mutator
-		void SetEmailAddress(string emailAddress);	// emailAddress mutator
-		void SetAge(int studentAge);				// studentAge mutator
-		int SetNumOfDays[3];						// array of number of days to complete each course
+	
+	public:				// Student class' public functions
+		const static int numOfDaysSize = 3;
+	
+	private:			// Student class' private data members
+		string studentID;
+		string firstName;
+		string lastName;
+		string emailAddress;
+		int studentAge;
+		int numOfDays[numOfDaysSize];
+		DegreeProgram degreeProgram;
+	
+	public:				// Student class' public functions
+		Student();		// Default constructor
+		Student(string studentID, string firstName, string lastName, string emailAddress, int studentAge, int numOfDays[], DegreeProgram degreeProgram);	// Constructor with parameters
+		// FIXME: Destructor
 
-	private:				// Student class' private functions
+		/* Accessors */
+		string getID();
+		string getFirstName();
+		string getLastName();
+		string getEmail();
+		int getAge();
+		int getNumDays();
+		DegreeProgram getDegreeProgram();
 
+		/* Mutators */
+		void setID(string studentID);
+		void setFirstName(string firstName);
+		void setLastName(string lastName);
+		void setEmail(string emailAddress);
+		void setAge(int studentAge);
+		void setNumDays(int numOfDays[]);
+		void setDegreeProgram(DegreeProgram dp);
+
+		void print();	// Function to print specific student's data 
 };													
 
 
