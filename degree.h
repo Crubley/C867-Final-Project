@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
 
-enum DegreeProgram { UNDECIDED, SECURITY, NETWORK, SOFTWARE };	// Enumerated data type for various program degrees
+enum DegreeProgram {UNKNOWN, SECURITY, NETWORK, SOFTWARE};	// Enumerated data type for various program degrees
 
-static const std::string degreeProgramStrings[] = { "UNDECIDED", "SECURITY", "NETWORK", "SOFTWARE" };		// array of strings to represent the degree program index
+static const std::string degreeProgramStrings[] = {"UNKNOWN", "SECURITY", "NETWORK", "SOFTWARE"};		// array of strings to represent the degree program index
