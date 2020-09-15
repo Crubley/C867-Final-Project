@@ -1,26 +1,28 @@
-#pragma once
 #include <iostream>
 #include "degree.h"
+#include "roster.h"
 using namespace std;
 
-
-class Student {			// Create the Student class
+// Create the Student class
+class Student {			
 	
-	public:				// Student class' public functions
+	// Student class' public functions
+	public:				
 		const static int numOfDaysSize = 3;
 	
-	private:			// Student class' private data members
+	// Student class' private data members
+	private:			
 		string studentID;
 		string firstName;
 		string lastName;
 		string emailAddress;
 		int studentAge;
-		int numOfDays[numOfDaysSize];
+		double numOfDays[numOfDaysSize];
 		DegreeProgram degreeProgram;
 	
-	public:				// Student class' public functions
+	public:				
 		Student();		// Default constructor
-		Student(string studentID, string firstName, string lastName, string emailAddress, int studentAge, int numOfDays[], DegreeProgram degreeProgram);	// Constructor with parameters
+		Student(string studentID, string firstName, string lastName, string emailAddress, int studentAge, double numOfDays[], DegreeProgram degreeProgram);	// Constructor with parameters
 		// FIXME: Destructor
 
 		/* Accessors */
@@ -29,7 +31,7 @@ class Student {			// Create the Student class
 		string getLastName();
 		string getEmail();
 		int getAge();
-		int getNumDays();
+		double* getNumDays();
 		DegreeProgram getDegreeProgram();
 
 		/* Mutators */
@@ -38,7 +40,7 @@ class Student {			// Create the Student class
 		void setLastName(string lastName);
 		void setEmail(string emailAddress);
 		void setAge(int studentAge);
-		void setNumDays(int numOfDays[]);
+		void setNumDays(double numOfDays[]);
 		void setDegreeProgram(DegreeProgram dp);
 
 		void print();	// Function to print specific student's data 
