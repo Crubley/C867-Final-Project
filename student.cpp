@@ -1,3 +1,4 @@
+#include "roster.h"
 #include "student.h"
 #include "degree.h"
 #include <iostream>
@@ -9,7 +10,10 @@ Student::Student()		// Constructor set to default values
 	this->lastName = "";
 	this->emailAddress = "";
 	this->studentAge = 0;
-	for (int i = 0; i < numOfDaysSize; i++) this->numOfDays[i] = 0;
+	for (int i = 0; i < numOfDaysSize; i++)
+	{
+		this->numOfDays[i] = 0;
+	}
 	this->degreeProgram = DegreeProgram::UNKNOWN;
 }
 
@@ -20,12 +24,14 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
 	this->studentAge = studentAge;
-	for (int i = 0; i < numOfDaysSize; i++) this->numOfDays[i] = numOfDays[i];
+	for (int i = 0; i < numOfDaysSize; i++)
+	{
+		this->numOfDays[i] = numOfDays[i];
+	}
 	this->degreeProgram = degreeProgram;
 }
 
-// FIXME: Destructor
-
+// Accessors
 string Student::getID() { 
 	return this->studentID; 
 }
@@ -48,6 +54,7 @@ DegreeProgram Student::getDegreeProgram() {
 	return this->degreeProgram; 
 }
 
+// Mutators
 void Student::setID(string studentID) { 
 	this->studentID = studentID; 
 }
@@ -69,6 +76,7 @@ void Student::setNumDays(double numOfDays[])
 }
 void Student::setDegreeProgram(DegreeProgram dp) { this->degreeProgram = dp; }
 
+// Print function
 void Student::print()
 {
 	cout << this->getID() << '\t';
@@ -78,7 +86,6 @@ void Student::print()
 	cout << this->getAge() << '\t';
 	cout << this->getNumDays()[0] << ',';
 	cout << this->getNumDays()[1] << ',';
-	cout << this->getNumDays()[2] << ',';
-	cout << this->getNumDays()[3] << '\t';
+	cout << this->getNumDays()[2] << '\t';
 	cout << degreeProgramStrings[this->getDegreeProgram()] << '\n';
 }
