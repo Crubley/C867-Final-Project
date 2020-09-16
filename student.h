@@ -1,6 +1,8 @@
+#pragma once
 #include <iostream>
 #include "degree.h"
 #include "roster.h"
+#include "student.h"
 using namespace std;
 
 // Create the Student class
@@ -23,9 +25,9 @@ class Student {
 	public:				
 		Student();		// Default constructor
 		Student(string studentID, string firstName, string lastName, string emailAddress, int studentAge, double numOfDays[], DegreeProgram degreeProgram);	// Constructor with parameters
-		// FIXME: Destructor
+		~Student();		//Destructor
 
-		/* Accessors */
+		// Accessors
 		string getID();
 		string getFirstName();
 		string getLastName();
@@ -34,7 +36,7 @@ class Student {
 		double* getNumDays();
 		DegreeProgram getDegreeProgram();
 
-		/* Mutators */
+		// Mutators
 		void setID(string studentID);
 		void setFirstName(string firstName);
 		void setLastName(string lastName);
